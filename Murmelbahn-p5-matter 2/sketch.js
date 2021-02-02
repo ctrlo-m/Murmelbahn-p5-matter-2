@@ -127,7 +127,7 @@ function setupMatter(svgPathElement) {
   // createCanvas (1350, 1750);
   engine = Engine.create();
   // use the path from the svg file to create the corresponding matter object
-  path = bodyFromPath(svgPathElement,465, 950, { isStatic: true, friction: 0.0 });
+  path = bodyFromPath(svgPathElement,670,1040, { isStatic: true, friction: 0.0 });
   // createCanvas(500, 500);
 
   // 1. Abschnitt ##### ##### ##### #####
@@ -175,7 +175,7 @@ function setupMatter(svgPathElement) {
   grounds.push(new Ground({ x: 500, y: 790, w: 250, h: 15, color: 'yellow'}, {isStatic: true, label: "Spike"}))
 
   walls.push(new Wall({ x: 1288, y: 80, w: 1600, h: 95, color: 'white'}, {isStatic: true}))
-  walls.push(new Wall({ x: -28, y: 420, w: 109, h: 600, color: 'white'}, {isStatic: true}))
+  walls.push(new Wall({ x: -28, y: 420, w: 80, h: 600, color: 'white'}, {isStatic: true}))
 
 
   button1 = new Button({ x: 1268, y: 120, w: 20, h: 40, color: 'green'}, {isStatic: true, label: "Button1"})
@@ -432,7 +432,8 @@ function draw() {
 
   drawSprite(ball.body, ballImg, 0, 0, 47, 47);
   drawSprite(ball2.body, ballImg, 0, 0, 47, 47);
-  drawSprite(path, bahnImg, 210, 151 , 1350, 2202);
+  //drawSprite(path, bahnImg, 210, 151, 1350, 2202);
+ drawSprite(path, bahnImg, 4, 63, 1350, 2202);
   showSwitch()
 }
 
