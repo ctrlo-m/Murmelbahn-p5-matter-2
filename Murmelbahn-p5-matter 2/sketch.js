@@ -61,11 +61,10 @@ let switchButton
 let button1
 let button2
 
-
 let magnet;
 let constraint1;
-let direction = 0.5;
-let move = {x: 400, y: 470 };
+let direction = 1.5;
+let move = {x: 620, y: 400 };
 let on_off = 0.0
 
 let defaultCategory = 0x0001,
@@ -152,7 +151,8 @@ function setupMatter(svgPathElement) {
   collisionFilter: {category: redCategory},}))
 
   trapDoors.push(new TrapDoor({ x: 910, y: 172, w: 200, h: 15, color: 'yellow' }))
-  blueBlocks.push(new BlockBlue({ x: 770, y: 527, w: 30, h: 30, color: 'blue' }, {isStatic: true,
+
+  blueBlocks.push(new BlockBlue({ x: 830, y: 527, w: 30, h: 30, color: 'blue' }, {isStatic: true,
   density: 0.4,
   collisionFilter: {category: blueCategory}, angle: -0.01}))
 
@@ -181,19 +181,6 @@ function setupMatter(svgPathElement) {
   button1 = new Button({ x: 1268, y: 120, w: 20, h: 40, color: 'green'}, {isStatic: true, label: "Button1"})
   button2 = new Button({ x: 185, y: 747, w: 20, h: 40, color: 'green'}, {isStatic: true, label: "Button2"})
 
-  ball = new Ball({ x: 100, y: 50, color: '255', size: 20 }, {
-    isStatic: false,
-    restitution: 0.3,
-    density: 0.2,
-    friction: 0,
-    frictionAir: 0,
-    frictionStatic: 0,
-    collisionFilter: {
-      category: defaultCategory,
-      mask: defaultCategory | redCategory | greenCategory | yellowCategory
-    },
-    label: "Ball"
-  })
   ball2 = new Ball({ x: 50, y: 380, color: '255', size: 20 }, {
     isStatic: false,
     restitution: 0.45,
@@ -278,7 +265,7 @@ function setupMatter(svgPathElement) {
 
   Matter.Events.on(engine, 'collisionStart', collision)
 
-  magnet = new Magnet({x: 620, y: 400, w: 50, h: 50, color: 'green'}, {
+  magnet = new Magnet({x: move.x, y: move.y, w: 50, h: 50, color: 'green'}, {
     isStatic: true,
     collisionFilter: {
       category: defaultCategory,
@@ -300,7 +287,25 @@ function setupMatter(svgPathElement) {
 constraint1 = Constraint.create({
   pointA: { x: 0, y: 300 }, bodyB: magnet.body, pointB: { x: 0, y: 0 }
 });
+
+
 World.add(engine.world, [magnet, constraint1]);
+
+ball = new Ball({ x: 100, y: 50, color: '255', size: 20 }, {
+  isStatic: false,
+  restitution: 0.3,
+  density: 0.2,
+  friction: 0,
+  frictionAir: 0,
+  frictionStatic: 0,
+  collisionFilter: {
+    category: defaultCategory,
+    mask: defaultCategory | redCategory | greenCategory | yellowCategory
+  },
+  label: "Ball"
+})
+
+
 
   World.add(engine.world, [path]);
   Engine.run(engine);
@@ -368,10 +373,10 @@ function draw() {
   //Bewegung Magnet
   move.x = magnet.body.position.x + direction
   if(move.x > 800){
-  direction = -0.5
+  direction = -1.5
   }
-  if(move.x < 500){
-    direction = 0.5
+  if(move.x < 460){
+    direction = 1.5
   }
   Body.setPosition(magnet.body, {x: move.x, y: move.y});
 
@@ -382,7 +387,7 @@ function draw() {
   magnet.show();
 
   //On Off Magnet
-  if (keyIsDown(66)) {
+  if (keyIsDown(66) && ball.body.position.y > 500) {
     on_off = 1
     drawSprite(magnet.body, magnetImg2, 0, 0, 106, 106)
     console.log("Magnet AN")
