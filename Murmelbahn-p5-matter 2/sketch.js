@@ -47,6 +47,8 @@ let min = 0
 let max = 3
 let x;
 
+let song;
+
 let redBlocks = []
 let blueBlocks = []
 let redTrapDoors = []
@@ -85,6 +87,9 @@ function preload() {
 
   setupMatter(svgPathElement);
   });
+
+  song = loadSound("./Synthwave2.mp3");
+
 }
 
 
@@ -111,7 +116,10 @@ function setup() {
   flute3 = loadSound("./Flute3.mp3");
   flute4 = loadSound("./Flute4.mp3");
 
-  hitSound.push(flute1, flute2, flute3, flute4)
+  hitSound.push(flute1, flute2, flute3, flute4);
+
+//Background Music
+  song.play();
 
 }
 
