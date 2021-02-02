@@ -164,7 +164,7 @@ function setupMatter(svgPathElement) {
   // 2. Abschnitt ##### ##### ##### #####
   trapDoors.push(new TrapDoor({ x: 0, y: 480, w: 177, h: 15, color: 'yellow' }))
   redBlocks.push(new BlockRed({ x: 620, y: 1091, w: 30, h: 42, color: 'red' }, {isStatic: true,
-  density: 0.4,
+  density: 0.4,v
   collisionFilter: {category: redCategory}}))
   blueTrapDoors.push(new BlockBlue({ x: 655, y: 1120, w: 43, h: 30, color: 'blue' }, {isStatic: true,
   density: 0.4,
