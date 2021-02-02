@@ -306,7 +306,6 @@ ball = new Ball({ x: 100, y: 50, color: '255', size: 20 }, {
 })
 
 
-
   World.add(engine.world, [path]);
   Engine.run(engine);
 }
