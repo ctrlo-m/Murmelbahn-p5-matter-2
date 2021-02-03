@@ -127,7 +127,7 @@ function setupMatter(svgPathElement) {
   // createCanvas (1350, 1750);
   engine = Engine.create();
   // use the path from the svg file to create the corresponding matter object
-  path = bodyFromPath(svgPathElement,670,1040, { isStatic: true, friction: 0.0 });
+  path = bodyFromPath(svgPathElement,670,1038, { isStatic: true, friction: 0.0 });
   // createCanvas(500, 500);
 
   // 1. Abschnitt ##### ##### ##### #####
@@ -138,7 +138,7 @@ function setupMatter(svgPathElement) {
   density: 0.4,
   collisionFilter: {category: redCategory}, angle: 0.15}))
 
-  blueBlocks.push(new BlockBlue({ x: 300, y: 115, w: 30, h: 30, color: 'blue' }, {isStatic: true,
+  blueBlocks.push(new BlockBlue({ x: 300, y: 118, w: 30, h: 30, color: 'blue' }, {isStatic: true,
   density: 0.4,
   collisionFilter: {category: blueCategory}, angle: 0.15}))
 
@@ -150,7 +150,7 @@ function setupMatter(svgPathElement) {
   density: 0.4,
   collisionFilter: {category: redCategory},}))
 
-  trapDoors.push(new TrapDoor({ x: 910, y: 172, w: 200, h: 15, color: 'yellow' }))
+  trapDoors.push(new TrapDoor({ x: 910, y: 170, w: 200, h: 15, color: 'yellow' }))
 
   blueBlocks.push(new BlockBlue({ x: 830, y: 527, w: 30, h: 30, color: 'blue' }, {isStatic: true,
   density: 0.4,
@@ -163,10 +163,10 @@ function setupMatter(svgPathElement) {
 
   // 2. Abschnitt ##### ##### ##### #####
   trapDoors.push(new TrapDoor({ x: 0, y: 480, w: 177, h: 15, color: 'yellow' }))
-  redBlocks.push(new BlockRed({ x: 620, y: 1091, w: 30, h: 42, color: 'red' }, {isStatic: true,
+  redBlocks.push(new BlockRed({ x: 607, y: 1094, w: 30, h: 42, color: 'red' }, {isStatic: true,
   density: 0.4,
   collisionFilter: {category: redCategory}}))
-  blueTrapDoors.push(new BlockBlue({ x: 655, y: 1120, w: 43, h: 30, color: 'blue' }, {isStatic: true,
+  blueTrapDoors.push(new BlockBlue({ x: 655, y: 1122, w: 43, h: 30, color: 'blue' }, {isStatic: true,
   density: 0.4,
   collisionFilter: {category: blueCategory}}))
 
@@ -428,7 +428,7 @@ function draw() {
   stroke(255);
 
   showState()
-  drawBody(path);
+  //drawBody(path);
 
   drawSprite(ball.body, ballImg, 0, 0, 47, 47);
   drawSprite(ball2.body, ballImg, 0, 0, 47, 47);
