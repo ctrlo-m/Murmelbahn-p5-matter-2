@@ -163,6 +163,10 @@ function setupMatter(svgPathElement) {
   density: 0.4,
   collisionFilter: {category: blueCategory}, angle: -0.12}))
 
+  redBlocks.push(new BlockRed({ x: 1060, y: 385, w: 30, h: 30, color: 'red' }, {isStatic: true,
+  density: 0.4,
+  collisionFilter: {category: redCategory}, angle: 0.17}))
+
   redBlocks.push(new BlockRed({ x: 1050, y: 502, w: 30, h: 30, color: 'red' }, {isStatic: true,
   density: 0.4,
   collisionFilter: {category: redCategory}, angle: -0.12}))
@@ -174,15 +178,15 @@ function setupMatter(svgPathElement) {
   density: 0.4,
   collisionFilter: {category: blueCategory}, angle: -0.1}))
 
-  redBlocks.push(new BlockRed({ x: 250, y: 752, w: 30, h: 30, color: 'red' }, {isStatic: true,
+  blueBlocks.push(new BlockBlue({ x: 250, y: 752, w: 30, h: 30, color: 'red' }, {isStatic: true,
   density: 0.4,
-  collisionFilter: {category: redCategory}, angle: -0.75}))
-  redBlocks.push(new BlockRed({ x: 215, y: 745, w: 30, h: 30, color: 'red' }, {isStatic: true,
+  collisionFilter: {category: blueCategory}, angle: -0.75}))
+  blueBlocks.push(new BlockBlue({ x: 215, y: 745, w: 30, h: 30, color: 'red' }, {isStatic: true,
   density: 0.4,
-  collisionFilter: {category: redCategory}}))
-  redBlocks.push(new BlockRed({ x: 215, y: 775, w: 30, h: 30, color: 'red' }, {isStatic: true,
+  collisionFilter: {category: blueCategory}}))
+  blueBlocks.push(new BlockBlue({ x: 215, y: 775, w: 30, h: 30, color: 'red' }, {isStatic: true,
   density: 0.4,
-  collisionFilter: {category: redCategory}}))
+  collisionFilter: {category: blueCategory}}))
 
 
   for (let i = 0; i < 10; i ++) {
@@ -191,12 +195,12 @@ function setupMatter(svgPathElement) {
 
   // 2. Abschnitt ##### ##### ##### ##### ##### ##### ##### ##### ##### ##### ##### ##### ##### ##### ##### #####
   trapDoors.push(new TrapDoor({ x: 0, y: 480, w: 177, h: 15, color: 'yellow' }))
-  redBlocks.push(new BlockRed({ x: 607, y: 1094, w: 30, h: 42, color: 'red' }, {isStatic: true,
-  density: 0.4,
-  collisionFilter: {category: redCategory}}))
-  blueTrapDoors.push(new BlockBlue({ x: 637, y: 1129, w: 46, h: 15, color: 'blue' }, {isStatic: true,
+  blueBlocks.push(new BlockBlue({ x: 607, y: 1094, w: 30, h: 42, color: 'red' }, {isStatic: true,
   density: 0.4,
   collisionFilter: {category: blueCategory}}))
+  redTrapDoors.push(new BlockRed({ x: 637, y: 1129, w: 46, h: 15, color: 'blue' }, {isStatic: true,
+  density: 0.4,
+  collisionFilter: {category: redCategory}}))
 
   grounds.push(new Ground({ x: 470, y: 240, w: 95, h: 15, color: 'yellow'}, {isStatic: true, label: "Spike"}))
   grounds.push(new Ground({ x: 700, y: 240, w: 95, h: 15, color: 'yellow'}, {isStatic: true, label: "Spike"}))
@@ -211,7 +215,7 @@ function setupMatter(svgPathElement) {
 
   ball2 = new Ball({ x: 50, y: 380, color: '255', size: 20 }, {
     isStatic: false,
-    restitution: 0.45,
+    restitution: 0.3,
     density: 0.2,
     friction: 0,
     frictionAir: 0,
@@ -427,7 +431,7 @@ function draw() {
   noStroke();
   // drawVertices(ball);
 
-  // scrollFollow(ball2.body);
+  scrollFollow(ball2.body);
 
   if (trapDoorState1 == true) {
     drawSprite(trapDoors[0].body, trapDoorImg, 0, 0, 200, 15)
