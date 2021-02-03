@@ -64,7 +64,7 @@ let button2
 let magnet;
 let constraint1;
 let direction = 1.5;
-let move = {x: 620, y: 400 };
+let move = {x: 620, y: 460 };
 let on_off = 0.0
 
 let defaultCategory = 0x0001,
@@ -276,7 +276,7 @@ function setupMatter(svgPathElement) {
         function(body1, body2) {
           return {
             x: (magnet.body.position.x - ball.body.position.x) * 1e-3 * on_off,
-            y: (magnet.body.position.y - ball.body.position.y) * 1e-3 * on_off,
+            y: (magnet.body.position.y - ball.body.position.y) * 2e-3 * on_off,
           };
           console.log(x)
         }
