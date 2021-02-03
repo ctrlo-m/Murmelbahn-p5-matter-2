@@ -130,7 +130,7 @@ function setupMatter(svgPathElement) {
   path = bodyFromPath(svgPathElement,670,1038, { isStatic: true, friction: 0.0 });
   // createCanvas(500, 500);
 
-  // 1. Abschnitt ##### ##### ##### #####
+  // 1. Abschnitt ##### ##### ##### ##### ##### ##### ##### ##### ##### ##### ##### ##### ##### ##### ##### #####
   switchButton = new Wall({ x: 622, y: 14, w: 30, h: 30, color: 'white'}, {isStatic: true})
   walls.push(new Wall({ x: 587, y: 0, w: 100, h: 60, color: 'pink'}, {isStatic: true}))
 
@@ -189,12 +189,12 @@ function setupMatter(svgPathElement) {
     walls.push(new Wall({ x: 1060 + 20*i, y: 100, w: 5, h: 30, color: 'darkOrchid' }, { isStatic: false, label: "Domino", density: 0.6, friction: 0.5, frictionStatic: 1}))
   }
 
-  // 2. Abschnitt ##### ##### ##### #####
+  // 2. Abschnitt ##### ##### ##### ##### ##### ##### ##### ##### ##### ##### ##### ##### ##### ##### ##### #####
   trapDoors.push(new TrapDoor({ x: 0, y: 480, w: 177, h: 15, color: 'yellow' }))
   redBlocks.push(new BlockRed({ x: 607, y: 1094, w: 30, h: 42, color: 'red' }, {isStatic: true,
   density: 0.4,
   collisionFilter: {category: redCategory}}))
-  blueTrapDoors.push(new BlockBlue({ x: 655, y: 1122, w: 43, h: 30, color: 'blue' }, {isStatic: true,
+  blueTrapDoors.push(new BlockBlue({ x: 637, y: 1129, w: 46, h: 15, color: 'blue' }, {isStatic: true,
   density: 0.4,
   collisionFilter: {category: blueCategory}}))
 
@@ -352,7 +352,6 @@ function showState() {
     blueTrapDoors.forEach((blueTrapDoor, i) => {
       drawSprite(blueTrapDoor.body, blueTrapDoorImg2, 0, 0, 90, 15);
     });
-
     ball.body.collisionFilter.mask = defaultCategory | redCategory | greenCategory | yellowCategory
     ball2.body.collisionFilter.mask = defaultCategory | redCategory | greenCategory | yellowCategory
   }
@@ -453,16 +452,17 @@ function draw() {
   // fill(10, 0, 20)
 
   strokeWeight(0.5);
-  stroke(255);
+  noStroke();
 
 
-  //drawBody(path);
+  // drawBody(path);
+  showState()
 
   drawSprite(ball.body, ballImg, 0, 0, 47, 47);
   drawSprite(ball2.body, ballImg, 0, 0, 47, 47);
   //drawSprite(path, bahnImg, 210, 151, 1350, 2202);
- drawSprite(path, bahnImg, 4, 63, 1350, 2202);
- showState()
+  drawSprite(path, bahnImg, 4, 63, 1350, 2202);
+
   showSwitch()
 }
 
