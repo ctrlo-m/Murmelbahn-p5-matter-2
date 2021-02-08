@@ -87,7 +87,7 @@ function preload() {
   setupMatter(svgPathElement);
   });
 
-  song = loadSound("./Synthwave2.mp3");
+  song = loadSound("./sounds/Synthwave2.mp3");
 
 }
 
@@ -95,25 +95,25 @@ function preload() {
 function setup() {
 
   createCanvas (1350, 2202);
-  ballImg = loadImage('ball.png');
-  magnetImg1 = loadImage('tile024.png');
-  magnetImg2 = loadImage('tile025.png');
-  switchButtonImg1 = loadImage('tile046.jpg');
-  switchButtonImg2 = loadImage('tile047.jpg');
-  blockBlueImg = loadImage('tile038.png');
-  blockRedImg = loadImage('tile039.png');
-  trapDoorImg = loadImage('tile040.png');
-  bahnImg = loadImage('bahn.png');
-  blockPassiveImg = loadImage('tile037.png');
-  redTrapDoorImg1 = loadImage('tile041.png');
-  redTrapDoorImg2 = loadImage('tile043.png');
-  blueTrapDoorImg1 = loadImage('tile042.png');
-  blueTrapDoorImg2 = loadImage('tile044.png');
+  ballImg = loadImage('images/ball.png');
+  magnetImg1 = loadImage('images/tile024.png');
+  magnetImg2 = loadImage('images/tile025.png');
+  switchButtonImg1 = loadImage('images/tile046.jpg');
+  switchButtonImg2 = loadImage('images/tile047.jpg');
+  blockBlueImg = loadImage('images/tile038.png');
+  blockRedImg = loadImage('images/tile039.png');
+  trapDoorImg = loadImage('images/tile040.png');
+  bahnImg = loadImage('images/bahn.png');
+  blockPassiveImg = loadImage('images/tile037.png');
+  redTrapDoorImg1 = loadImage('images/tile041.png');
+  redTrapDoorImg2 = loadImage('images/tile043.png');
+  blueTrapDoorImg1 = loadImage('images/tile042.png');
+  blueTrapDoorImg2 = loadImage('images/tile044.png');
 
-  flute1 = loadSound("./Flute1.mp3");
-  flute2 = loadSound("./Flute2.mp3");
-  flute3 = loadSound("./Flute3.mp3");
-  flute4 = loadSound("./Flute4.mp3");
+  flute1 = loadSound("./sounds/Flute1.mp3");
+  flute2 = loadSound("./sounds/Flute2.mp3");
+  flute3 = loadSound("./sounds/Flute3.mp3");
+  flute4 = loadSound("./sounds/Flute4.mp3");
 
   hitSound.push(flute1, flute2, flute3, flute4);
 
